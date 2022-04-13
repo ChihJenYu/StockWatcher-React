@@ -1,0 +1,11 @@
+/* FONTS */
+@font-face {
+    font-family: "Haarlem Deco";
+    src: url("../fonts/Haarlem\ Deco/Haarlem\ Deco.otf") format("opentype"),
+         url("../fonts/Haarlem\ Deco/Haarlem\ Deco.ttf") format("truetype");
+}
+
+.logo {
+    font-family: "Haarlem Deco";
+}
+

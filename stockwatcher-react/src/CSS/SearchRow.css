@@ -1,0 +1,47 @@
+.stock-search-row {
+    width: 91vw;
+    height: 60px;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stock-search-field {
+    line-height: 2;
+    background-color: #000;
+    border: none;
+    outline: none;
+    width: 16vw;
+    color: #aaa;
+    padding: 0 5px;
+}
+
+.stock-search-field::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.icon.search {
+    color: #eee;
+}
+
+.contact-url {
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contact-url:hover {
+    color: #666;
+}
+
+.search-container {
+    width: 100%;
+}
+
+.contact-trigger {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

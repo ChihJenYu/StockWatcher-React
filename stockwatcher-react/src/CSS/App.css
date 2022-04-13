@@ -1,0 +1,682 @@
+/* RESET CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: "Arial";
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background-color: #000;
+}
+
+a {
+    color: #fff;
+}
+
+.watchlist-viewport a:hover,
+.search-result a:hover {
+    color: #ccc;
+}
+
+.ui.list>.item a.header:hover {
+    color: #888 !important;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: "Lato" !important;
+}
+
+/* FONTS */
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/Lato/Lato-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/Lato/Lato-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/Lato/Lato-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+#root {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/* SIDE COLUMN */
+.side-column {
+    width: 9vw;
+    background-color: rgb(24, 24, 24);
+    min-height: 100vh;
+}
+
+.side-menu-block {
+    padding: 5px 20px;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0 14px 0;
+}
+
+ul li a,
+ul li div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+li span:nth-of-type(2) {
+    margin-top: 5px;
+}
+
+.country-list {
+    color: #eee;
+}
+
+.country-list li {
+    cursor: pointer;
+}
+
+.country-list li a {
+    margin-top: 5px;
+    color: #eee;
+    text-decoration: none;
+}
+
+.admin {
+    color: #aaa;
+}
+
+.admin li a {
+    cursor: pointer;
+    color: #aaa;
+    text-decoration: none;
+}
+
+.admin li a:hover {
+    color: #666;
+}
+
+button {
+    cursor: pointer;
+}
+
+.logo {
+    font-family: "Haarlem Deco";
+    text-align: center;
+    font-size: 35px;
+    color: #b89441;
+    line-height: 60px;
+    margin-top: 5px;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    /* display: flex;
+    flex-direction: column; */
+    overflow: hidden;
+}
+
+.tab-content-container {
+    padding: 10px 15px;
+}
+
+.tab-content {
+    background-color: #000 !important;
+}
+
+.nav-link {
+    color: #eee;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #aaa;
+    display: block;
+    color: #000;
+}
+
+.nav-pills .nav-link:hover:not(.active) {
+    color: #666;
+}
+
+.ui.button {
+    line-height: 0.7em !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+
+/* OVERVIEW TAB */
+.stock-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-end;
+}
+
+.add-to-watchlist {
+    margin-left: 20px;
+}
+
+.stock-symbol {
+    margin-right: 10px;
+    color: #eee;
+    font-size: 30px;
+}
+
+.stock-ch-name {
+    margin-right: 15px;
+    color: #eee;
+    font-size: 30px;
+}
+
+.stock-eng-name {
+    color: #eee;
+    font-size: 25px;
+}
+
+.realtime-price {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 10px;
+}
+
+.realtime-price h2 {
+    font-size: 50px;
+}
+
+.realtime-price h4 {
+    /* color: #f00; */
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+.overview-table {
+    color: #eee;
+}
+
+.overview-table th,
+.overview-table td {
+    padding: 10px;
+}
+
+.overview-table tr {
+    border-bottom: 1px solid #fff;
+}
+
+.react-loader {
+    padding: 0px !important;
+    background: rgba(255, 255, 255, 0) !important;
+    border: none !important;
+    margin: 0px !important;
+    top: 10vh;
+    /* position: fixed; */
+}
+
+.custom-loader {
+    padding: 0px !important;
+    background: rgba(255, 255, 255, 0) !important;
+    border: none !important;
+    margin: 0px !important;
+}
+
+.to-watchlist {
+    margin-left: 20px !important;
+}
+
+/* HISTORICAL DATA */
+.date-selection {
+    display: flex;
+}
+
+
+input[type="date"],
+.ui.selection.dropdown,
+.ui.selection.dropdown .menu>.item {
+    line-height: 2 !important;
+    background-color: rgb(24, 24, 24) !important;
+    color: #aaa !important;
+    outline: none !important;
+    border: none !important;
+    padding: 0 10px !important;
+}
+
+.search-input>input {
+    line-height: 2 !important;
+    background-color: #000 !important;
+    color: #aaa !important;
+    outline: none !important;
+    border: none !important;
+    padding: 0 10px !important;
+}
+
+div.menu {
+    border: none !important;
+}
+
+
+input.start-date,
+input.end-date,
+input.interval,
+.date-selection .ui.selection.dropdown {
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+button.submit {
+    line-height: 2;
+    background-color: #aaa;
+    display: block;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.start-date::-webkit-calendar-picker-indicator,
+.end-date::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+input.interval::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.tab-content {
+    margin-left: 30px;
+}
+
+.charts {
+    margin-top: 10px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+}
+
+/* NEWS TAB */
+.date-selection-label {
+    line-height: 2;
+    color: #aaa;
+    margin-right: 10px;
+}
+
+.more-news {
+    display: none;
+    margin: 0 auto;
+    width: 100px;
+    line-height: 2;
+    background-color: #aaa;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.viewport-container {
+    margin-top: 20px;
+}
+
+.news-viewport::-webkit-scrollbar:vertical {
+    width: 5px;
+}
+
+.news-viewport::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #aaa;
+}
+
+.news-article {
+    margin-bottom: 20px;
+}
+
+.news-title {
+    color: #eee;
+    text-decoration: none;
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+.news-title:hover {
+    color: #eee;
+}
+
+.news-pub-date {
+    color: #666;
+    margin-top: 15px;
+}
+
+.loading,
+.end-of-news,
+.empty-watchlist {
+    color: #666;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.loading {
+    display: none;
+}
+
+.news-viewport {
+    width: 100%;
+    height: calc(100vh - 250px);
+}
+
+/* CONTACT MODAL */
+.modal-header {
+    background-color: #eee !important;
+    color: #666;
+    font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #eee !important;
+    outline: none;
+    border: 1px solid #bbb;
+    color: #666;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #ddd !important;
+}
+
+.contact-form input[type="submit"]:active,
+.contact-form input[type="submit"]:focus {
+    background-color: #ccc !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* LOGIN PAGE */
+.login-container {
+    background-color: #fff;
+    margin-top: 50px;
+    border-radius: 4.8px;
+    /* box-shadow: 0 0 10px #ccc; */
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.login-header {
+    /* width: 100%; */
+    border-bottom: 1px solid rgb(222, 226, 230);
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: #eee;
+}
+
+.login-body {
+    padding: 10px 20px 25px 20px;
+}
+
+.login-container h1 {
+    font-size: 30px;
+    /* text-align: center; */
+}
+
+.login-container form {
+    margin-top: 20px;
+}
+
+.login-nav-tabs .nav-item {
+    padding-bottom: 0px !important;
+}
+
+.login-body .login-tab-content {
+    margin-left: 0px;
+}
+
+.login-tab-content .mb-3 {
+    margin-bottom: 25px !important;
+}
+
+.login-tab-content .form-label {
+    margin-bottom: 15px !important;
+}
+
+.login-tab-content button[type="submit"] {
+    background-color: #eee !important;
+    outline: none;
+    border: 1px solid #bbb;
+    color: #666;
+}
+
+.login-tab-content button[type="submit"]:hover {
+    background-color: #ddd !important;
+}
+
+.login-tab-content button[type="submit"]:active,
+.login-tab-content button[type="submit"]:focus {
+    background-color: #ccc !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.login-nav-tabs .nav-link:not(.active) {
+    color: #aaa;
+}
+
+.login-nav-tabs .nav-link:not(.active):hover {
+    color: #999;
+}
+
+.login-nav-tabs .nav-link:not(.active):focus,
+.login-nav-tabs .nav-link:not(.active):active {
+    color: #888;
+}
+
+/* WATCHLIST */
+.watchlist-view {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    padding: 30px 20px;
+    margin-left: 30px;
+}
+
+.watchlist-view .loading,
+.empty-watchlist {
+    text-align: center;
+}
+
+.watchlist-stock {
+    padding: 10px 5px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.watchlist-stock-link {
+    /* padding: 10px 5px; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* width: 300px; */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.watchlist-stock-link .stock-symbol,
+.watchlist-stock-link .stock-ch-name {
+    color: #eee;
+    font-size: 30px;
+}
+
+.watchlist-stock-link .stock-realtime-price {
+    font-size: 30px;
+}
+
+.watchlist-stock-link .stock-dollar-change,
+.watchlist-stock-link .stock-percent-change {
+    font-size: 30px;
+}
+
+.stock-dollar-change {
+    margin: 0 15px;
+}
+
+.stock-percent-change {
+    margin-right: 15px;
+}
+
+.ui.form {
+    padding: 25px;
+}
+
+.form label {
+    line-height: 2;
+}

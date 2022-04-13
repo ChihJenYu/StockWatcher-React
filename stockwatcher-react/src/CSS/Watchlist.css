@@ -1,0 +1,45 @@
+.ui.items .item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.watchlist-description .icon {
+    cursor: pointer;
+}
+
+.watchlist-viewport {
+    overflow-y: scroll;
+    margin-top: 20px;
+}
+
+.item .watchlist-title a.header {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.item .meta span {
+    font-size: 22px;
+    color: #eee;
+}
+
+.watchlist-title {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.watchlist-description span {
+    font-size: 20px;
+}
+
+.empty-message {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-message p {
+    color: #888;
+}

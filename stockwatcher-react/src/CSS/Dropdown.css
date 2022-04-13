@@ -1,0 +1,11 @@
+div.dropdown {
+    padding: 0px 5px !important;
+    min-height: 1em !important;
+    display: flex !important;
+    align-items: center !important;
+    min-width: 7em !important;
+}
+
+.dropdown i.icon {
+    height: 100% !important;
+}

@@ -1,0 +1,32 @@
+.dimmer.visible.transition {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.visible.transition {
+    width: 40%;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modals form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form>* {
+    width: 100%;
+}
+
+.signin-prompt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cca33aa8.css",
+    "main.js": "/static/js/main.7307feac.js",
+    "static/js/116.936aee23.chunk.js": "/static/js/116.936aee23.chunk.js",
+    "static/js/883.6a9b19db.chunk.js": "/static/js/883.6a9b19db.chunk.js",
+    "static/js/583.0c520f40.chunk.js": "/static/js/583.0c520f40.chunk.js",
+    "static/js/954.3bdd1223.chunk.js": "/static/js/954.3bdd1223.chunk.js",
+    "static/media/Lato-Light.ttf": "/static/media/Lato-Light.c7400fcad9e48ca9043f.ttf",
+    "static/media/Lato-Regular.ttf": "/static/media/Lato-Regular.9d883d540ee2b4de8024.ttf",
+    "static/media/Lato-Bold.ttf": "/static/media/Lato-Bold.636be8de934918e38ed9.ttf",
+    "static/media/Haarlem Deco.ttf": "/static/media/Haarlem Deco.3ec01e7e54a8921cc255.ttf",
+    "static/media/Haarlem Deco.otf": "/static/media/Haarlem Deco.10826d355a0c30a2d89f.otf",
+    "index.html": "/index.html",
+    "main.cca33aa8.css.map": "/static/css/main.cca33aa8.css.map",
+    "main.7307feac.js.map": "/static/js/main.7307feac.js.map",
+    "116.936aee23.chunk.js.map": "/static/js/116.936aee23.chunk.js.map",
+    "883.6a9b19db.chunk.js.map": "/static/js/883.6a9b19db.chunk.js.map",
+    "583.0c520f40.chunk.js.map": "/static/js/583.0c520f40.chunk.js.map",
+    "954.3bdd1223.chunk.js.map": "/static/js/954.3bdd1223.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cca33aa8.css",
+    "static/js/main.7307feac.js"
+  ]
+}
