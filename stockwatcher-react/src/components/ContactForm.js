@@ -9,7 +9,7 @@ const ContactForm = ({ setContactOpen }) => {
 
         const submitClick = (e) => {
             e.preventDefault();
-            fetch("/emails", {
+            fetch("/api/emails", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

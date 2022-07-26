@@ -22,7 +22,7 @@ const Overview = ({ stock }) => {
         let isMounted = true
         const fetchOverviewData = async () => {
             setIsLoading(true)
-            const res = await fetch(`/${stock}/overview`)
+            const res = await fetch(`/api/${stock}/overview`)
             const data = await res.json()
             if (isMounted) {
                 setChineseName(data.chinese_name)
@@ -41,7 +41,7 @@ const Overview = ({ stock }) => {
         }
         const fetchInList = async () => {
             try {
-                const res = await fetch(`/${stock}/list`)
+                const res = await fetch(`/api/${stock}/list`)
                 const data = await res.json()
                 if (isMounted) {
                     setInList(data["inWatchlist"])
@@ -52,7 +52,7 @@ const Overview = ({ stock }) => {
 
         }
         const fetchLoggedIn = async () => {
-            const res = await fetch("/auth-query")
+            const res = await fetch("/api/auth-query")
             const data = await res.json()
             if (isMounted) {
                 setIsLoggedIn(data["logged-in"]);

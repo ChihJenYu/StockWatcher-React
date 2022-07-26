@@ -31,7 +31,7 @@ const SearchBar = ({ placeholder }) => {
     // search for debounced term
     useEffect(() => {
         const search = async () => {
-            const res = await fetch(`/${debouncedTerm}`)
+            const res = await fetch(`/api/${debouncedTerm}`)
             const data = await res.json()
             setResults(data.result)
         }

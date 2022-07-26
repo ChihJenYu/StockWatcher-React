@@ -19,7 +19,7 @@ const DateSelectionBar = ({ stock, setParentState, setIsLoading, intervalOptions
         const [setCandleHTML, setVolHTML] = setParentState
         setCandleHTML("")
         setVolHTML("")
-        fetch(`/${stock}/chart?start=${startDate}&end=${endDate}&interval=${intervalSelected}`)
+        fetch(`/api/${stock}/chart?start=${startDate}&end=${endDate}&interval=${intervalSelected}`)
             .then(res => res.json())
             .then(data => {
                 setCandleHTML(data["candleFig"])

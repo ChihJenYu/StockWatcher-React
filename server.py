@@ -33,11 +33,11 @@ app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=1)
 app.config["JWT_REFRESH_COOKIE_NAME"] = "user_signed_in"
 jwt.init_app(app)
 
-@app.route("/usstocks")
+@app.route("/api/usstocks")
 def usstocks():
     return "US stocks feature will be available soon!"
 
-@app.route("/<stock_symbol>/chart")
+@app.route("/api/<stock_symbol>/chart")
 def render_chart(stock_symbol):
     start = request.args.get("start")
     end = request.args.get("end")
@@ -52,7 +52,7 @@ def render_chart(stock_symbol):
     resp.mimetype = "application/json"
     return resp
 
-@app.route("/<stock_symbol>")
+@app.route("/api/<stock_symbol>")
 def search(stock_symbol):
     regx = re.compile(f"^{stock_symbol}", re.IGNORECASE)
     res = list(db.listed_stocks.find({"symbol": regx}))
@@ -61,7 +61,7 @@ def search(stock_symbol):
         res_array.append({"chinese_name": res[i]["chinese_name"], "symbol": res[i]["symbol"]})
     return make_response({"result": res_array[:10]})
 
-@app.route("/<stock_symbol>/overview")
+@app.route("/api/<stock_symbol>/overview")
 def overview(stock_symbol):
     db_result = db.listed_stocks.find_one({"symbol": stock_symbol})
     ch_name = db_result["chinese_name"]
@@ -91,7 +91,7 @@ def overview(stock_symbol):
     }))
 
 
-@app.route("/watchlist/user")
+@app.route("/api/watchlist/user")
 @jwt_required(refresh=True)
 def user_watchlist():
     current_user_email = get_jwt_identity()
@@ -116,7 +116,7 @@ def user_watchlist():
     resp.mimetype = "application/json"
     return resp
 
-@app.route("/<stock_symbol>/news")
+@app.route("/api/<stock_symbol>/news")
 def news(stock_symbol):
     start = request.args.get("begin")
     end = request.args.get("end")
@@ -128,7 +128,7 @@ def news(stock_symbol):
     return resp, 200
 
 
-@app.route("/emails", methods=["POST"])
+@app.route("/api/emails", methods=["POST"])
 def new_contact():
     data = request.get_json()
     name = data["name"]
@@ -143,7 +143,7 @@ def new_contact():
     })
     return "Email request saved.", 200
 
-@app.route("/user/register", methods=["POST"])
+@app.route("/api/user/register", methods=["POST"])
 def register():
     data = request.get_json()
     email = data["email"]
@@ -163,7 +163,7 @@ def register():
         })
         return "User registered.", 200
 
-@app.route("/user/login", methods=["POST"])
+@app.route("/api/user/login", methods=["POST"])
 def login():
     data = request.json
     email = data["email"]
@@ -181,18 +181,18 @@ def login():
             return resp, 200
     return "Login failed.", 400
 
-@app.route("/auth-query")
+@app.route("/api/auth-query")
 def auth_query():
     return make_response(jsonify({'logged-in': session.get("logged_in", False)}))
 
-@app.route("/logout", methods=["POST"])
+@app.route("/api/logout", methods=["POST"])
 def logout():
     session['logged_in'] = False
     resp = make_response("Logged out.")
     resp.set_cookie("user_signed_in", "")
     return resp
 
-@app.route("/<stock_symbol>/add")
+@app.route("/api/<stock_symbol>/add")
 @jwt_required(refresh=True)
 def add(stock_symbol):
     current_user_email = get_jwt_identity()
@@ -201,7 +201,7 @@ def add(stock_symbol):
     db.users.update_one(query, update)
     return f"Added {stock_symbol} to watchlist.", 200
 
-@app.route("/<stock_symbol>/list")
+@app.route("/api/<stock_symbol>/list")
 @jwt_required(refresh=True)
 def look_list(stock_symbol):
     current_user_email = get_jwt_identity()
@@ -211,7 +211,7 @@ def look_list(stock_symbol):
     else: 
         return make_response(jsonify({"inWatchlist": False}))
 
-@app.route("/<stock_symbol>/remove")
+@app.route("/api/<stock_symbol>/remove")
 @jwt_required(refresh=True)
 def remove_from_watchlist(stock_symbol):
     current_user_email = get_jwt_identity()

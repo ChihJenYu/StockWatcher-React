@@ -16,7 +16,7 @@ const News = ({ stock }) => {
 
     const fetchNews = () => {
         setIsLoading(true)
-        fetch(`/${stock}/news?start=1&begin=${startDate}&end=${endDate}`)
+        fetch(`/api/${stock}/news?start=1&begin=${startDate}&end=${endDate}`)
             .then(res => res.json())
             .then(data => {
                 const news = data["news"]

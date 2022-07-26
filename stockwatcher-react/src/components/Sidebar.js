@@ -7,7 +7,7 @@ const Sidebar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     useEffect(() => {
-        fetch("/auth-query")
+        fetch("/api/auth-query")
             .then((res) => res.json())
             .then((data) => {
                 setIsLoggedIn(data["logged-in"]);

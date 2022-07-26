@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkstockwatcher_react=self.webpackChunkstockwatcher_react||[]).push([[883],{883:function(t,e,n){n.r(e),n.d(e,{sidebarEventHandlers:function(){return o}});var o=function(){var t=document.querySelector(".logout");t&&t.addEventListener("click",(function(t){t.preventDefault(),fetch("/logout",{method:"POST"}).then((function(t){return t.text()})).then((function(){alert("You have logged out!"),window.location.reload()}))}))}}}]);
-//# sourceMappingURL=883.6a9b19db.chunk.js.map

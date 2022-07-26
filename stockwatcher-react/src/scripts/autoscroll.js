@@ -11,7 +11,7 @@ export const autoscroll = (stock) => {
     viewport.addEventListener('scroll', () => {
         if ((viewport.scrollTop + viewport.offsetHeight) >= viewport.scrollHeight) {
             customLoader.style.display = 'block';
-            fetch(`/${stock}/news?start=` + (+newsStart) + '&begin=' + startDate + '&end=' + endDate)
+            fetch(`/api/${stock}/news?start=` + (+newsStart) + '&begin=' + startDate + '&end=' + endDate)
                 .then(res => res.json())
                 .then(data => {
                     const news = data['news'];

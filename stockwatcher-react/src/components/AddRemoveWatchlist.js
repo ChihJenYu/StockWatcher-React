@@ -3,7 +3,7 @@ const AddRemoveWatchlist = ({ inList, setInList, stock }) => {
     const button = useRef();
     useEffect(() => {
         const addHandler = () => {
-            fetch(`/${stock}/add`)
+            fetch(`/api/${stock}/add`)
                 .then(res => res.text())
                 .then(data => {
                     setInList(true);
@@ -12,7 +12,7 @@ const AddRemoveWatchlist = ({ inList, setInList, stock }) => {
         }
 
         const removeHandler = () => {
-            fetch(`/${stock}/remove`)
+            fetch(`/api/${stock}/remove`)
                 .then(res => res.text())
                 .then(data => {
                     setInList(false);

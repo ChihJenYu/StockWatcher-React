@@ -7,7 +7,7 @@ const Watchlist = () => {
     const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
         setIsLoading(true)
-        fetch("/watchlist/user")
+        fetch("/api/watchlist/user")
             .then(res => res.json())
             .then(({ watchlist_data }) => {
                 setWatchlist(watchlist_data)
@@ -38,7 +38,7 @@ const Watchlist = () => {
                     <span className="stock-dollar-change">{item.dollar_change}</span>
                     <span className="stock-percent-change">{item.percent_change}</span>
                     <i className="trash alternate outline icon" style={{ color: "red" }} onClick={(e) => {
-                        fetch(`/${item.symbol}/remove`)
+                        fetch(`/api/${item.symbol}/remove`)
                             .then(res => res.text())
                             .then(data => {
                                 e.target.parentNode.parentNode.remove();

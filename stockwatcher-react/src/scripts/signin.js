@@ -4,7 +4,7 @@ export const signin = (referrer) => {
         e.preventDefault();
         let signinEmail = document.querySelector("#signin-email").value;
         let signinPassword = document.querySelector("#signin-password").value;
-        fetch("/user/login", {
+        fetch("/api/user/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

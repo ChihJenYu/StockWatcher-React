@@ -4,7 +4,7 @@ export const sidebarEventHandlers = () => {
     if (logout) {
         logout.addEventListener("click", (e) => {
             e.preventDefault();
-            fetch("/logout", { method: "POST" })
+            fetch("/api/logout", { method: "POST" })
                 .then(res => res.text())
                 .then(() => {
                     alert("You have logged out!");
