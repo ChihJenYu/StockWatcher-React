@@ -1,8 +1,6 @@
 import pandas as pd
 import csv
 import requests
-import numpy
-import lxml
 from bs4 import BeautifulSoup
 from utils import remove_comma
 
