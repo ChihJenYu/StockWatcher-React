@@ -1,11 +1,8 @@
-from flask import Flask, redirect, request, jsonify, make_response, Response, send_from_directory, session, render_template
+from flask import Flask, request, jsonify, make_response, session
 from flask_pymongo import PyMongo
-from itsdangerous import json
-import requests
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_refresh_token, set_refresh_cookies, get_jwt_identity, jwt_required, JWTManager
-from bs4 import BeautifulSoup
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta
 import sys
 import utils
 from crawl import create_prices_df
@@ -15,11 +12,11 @@ import NewsGetter as ng
 import re
 import os
 from dotenv import load_dotenv
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 load_dotenv()
 
-app = Flask(__name__, static_folder="stockwatcher-react/build", static_url_path="")
+app = Flask(__name__)
 CORS(app)
 
 app.secret_key = os.environ.get("APP_SECRET_KEY")
@@ -35,15 +32,6 @@ app.config["JWT_TOKEN_LOCATION"] = ["cookies"]
 app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=1)
 app.config["JWT_REFRESH_COOKIE_NAME"] = "user_signed_in"
 jwt.init_app(app)
-
-# @app.route("/")
-# @cross_origin()
-# def serve():
-#     return send_from_directory(app.static_folder, "index.html")
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
-    return send_from_directory(app.static_folder, "index.html")
 
 @app.route("/usstocks")
 def usstocks():
@@ -128,14 +116,8 @@ def user_watchlist():
     resp.mimetype = "application/json"
     return resp
 
-    return render_template("login.html")
-
 @app.route("/<stock_symbol>/news")
 def news(stock_symbol):
-    # if request.args.get("begin") is None:
-    #     resp = make_response(render_template("news.html", stock_symbol=stock_symbol))
-    #     return resp
-    # else:
     start = request.args.get("begin")
     end = request.args.get("end")
     news_getter = ng.NewsGetter(db.listed_stocks.find_one({"symbol": stock_symbol})["chinese_name"],
@@ -201,7 +183,7 @@ def login():
 
 @app.route("/auth-query")
 def auth_query():
-    return make_response(jsonify({'logged-in': session['logged_in']}))
+    return make_response(jsonify({'logged-in': session.get("logged_in", False)}))
 
 @app.route("/logout", methods=["POST"])
 def logout():
